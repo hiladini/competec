@@ -2,14 +2,26 @@ import java.util.Scanner;
 public class Main
 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int x = 1;
+		int numero;
+		boolean maisQueTres = false;
+		int frequencia [] = new int [10];
 		
-		while (x <= 1000) {
-		   if (x % 10 == 0 ){
-		       System.out.print(x + " ");
-		   }    
-		    x++;
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i = 0; i < 5; i++){
+		    numero = sc.nextInt();
+		    frequencia[numero]++;
+		}
+		for(int i = 0; i<10; i++){
+		    if(frequencia[i] >= 3){
+		        maisQueTres = true;
+		    }
+		}
+		if(maisQueTres == true){
+		    System.out.println("Sim");
+		}
+		else{
+		    System.out.println("Não");
 		}
 		
 	}
